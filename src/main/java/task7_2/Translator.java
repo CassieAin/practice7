@@ -23,6 +23,11 @@ public class Translator {
         ds.addPhrases("год", "year");
         ds.addPhrases( "фестиваль", "festival");
         ds.addPhrases( "небо", "sky");
+        ds.addPhrases( "начала", "started");
+        ds.addPhrases( "любит", "loves");
+        ds.addPhrases( "новый", "new");
+        ds.addPhrases( "хочет", "wants");
+        ds.addPhrases( "отпраздновать", "to celebrate");
     }
 
     public String translate(String word){
@@ -33,27 +38,27 @@ public class Translator {
     }
 
     public String translateCheck(String word){
+        if(isInDictionary(word)){
             return dictionary.get(word);
+        }else{
+            return "NotFound";
+        }
     }
 
     public boolean isInDictionary(String word){
-        if(dictionary.containsKey(word)){
-            return true;
-        }
-        return false;
+        return dictionary.containsKey(word);
     }
 
     public String translateSentence(String sentence){
         StringBuilder result = new StringBuilder();
-        String[] splittedStrings = sentence.split( "\n" );
+        String[] splittedStrings = sentence.trim().split( " " );
 
         List<String> list = new ArrayList<>();
         for(String s : splittedStrings){
-            result.append(translateCheck(s));
+            result.append(translateCheck(s) + " ");
             list.add(translateCheck(s));
         }
         return result.toString();
-        //return list.toString();
     }
 
     public String getWord(String word){

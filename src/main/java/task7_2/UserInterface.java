@@ -10,7 +10,7 @@ public class UserInterface {
         System.out.println("Input the phrase to translate:");
         translator.fillDictionary();
         String input = scanner.nextLine();
-        System.out.println(translator.translateSentence(input));
+        System.out.println(translator.translateSentence(input.toLowerCase().trim()));
         //System.out.println("get rus word" + translator.getWord("небо"));
     }
 }

@@ -8,14 +8,6 @@ public class DataStorage {
 
     public DataStorage(){
         dictionary = new HashMap<>();
-     /*   dictionary.put("programming", "программирование");
-        dictionary.put("dog", "собака");
-        dictionary.put("cat", "кошка");
-        dictionary.put("house", "дом");
-        dictionary.put("trip", "путешествие");
-        dictionary.put("year", "год");
-        dictionary.put("festival", "фестиваль");
-        dictionary.put("sky", "небо");*/
     }
 
     public void addPhrases(String russian, String english){
