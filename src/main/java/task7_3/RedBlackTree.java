@@ -61,7 +61,6 @@ public class RedBlackTree {
         }
     }
 
-    //Takes as argument the newly inserted node
     private void fixTree(Node node) {
         while (node.parent.color == RED) {
             Node uncle = nil;
